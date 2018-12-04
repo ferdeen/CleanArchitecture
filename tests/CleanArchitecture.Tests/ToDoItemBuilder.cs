@@ -1,29 +1,29 @@
-﻿using CleanArchitecture.Core.Entities;
+﻿using PaxosExercise.Core.Entities;
 
-namespace CleanArchitecture.Tests
+namespace PaxosExercise.Tests
 {
-    public class ToDoItemBuilder
+    public class MessageItemBuilder
     {
-        private readonly ToDoItem _todo = new ToDoItem();
+        private readonly MessageItem _messageList = new MessageItem();
 
-        public ToDoItemBuilder Id(int id)
+        public MessageItemBuilder Id(int id)
         {
-            _todo.Id = id;
+            _messageList.Id = id;
             return this;
         }
 
-        public ToDoItemBuilder Title(string title)
+        public MessageItemBuilder Message(string message)
         {
-            _todo.Title = title;
+            _messageList.Message = message;
             return this;
         }
 
-        public ToDoItemBuilder Description(string description)
+        public MessageItemBuilder Digest(string Digest)
         {
-            _todo.Description = description;
+            _messageList.Digest = Digest;
             return this;
         }
 
-        public ToDoItem Build() => _todo;
+        public MessageItem Build() => _messageList;
     }
 }

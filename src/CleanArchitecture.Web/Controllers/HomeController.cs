@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace CleanArchitecture.Web.Controllers
+namespace PaxosExercise.Web.Controllers
 {
     public class HomeController : Controller
     {

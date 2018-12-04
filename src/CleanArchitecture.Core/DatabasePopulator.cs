@@ -1,32 +1,32 @@
-﻿using CleanArchitecture.Core.Entities;
-using CleanArchitecture.Core.Interfaces;
+﻿using PaxosExercise.Core.Entities;
+using PaxosExercise.Core.Interfaces;
 using System.Linq;
 
-namespace CleanArchitecture.Core
+namespace PaxosExercise.Core
 {
     public static class DatabasePopulator
     {
         public static int PopulateDatabase(IRepository todoRepository)
         {
-            if (todoRepository.List<ToDoItem>().Any()) return 0;
+            if (todoRepository.List<MessageItem>().Any()) return 0;
 
-            todoRepository.Add(new ToDoItem
+            todoRepository.Add(new MessageItem
             {
-                Title = "Get Sample Working",
-                Description = "Try to get the sample to build."
+                Message = "bar",
+                Digest = "fcde2b2edba56bf408601fb721fe9b5c338d10ee429ea04fae5511b68fbf8fb9"
             });
-            todoRepository.Add(new ToDoItem
+            todoRepository.Add(new MessageItem
             {
-                Title = "Review Solution",
-                Description = "Review the different projects in the solution and how they relate to one another."
+                Message = "Ferdeen",
+                Digest = "94614313b6ab9fc78ff632295ebeb5a4ab993316f6ba0392ceb7811fc4da4435"
             });
-            todoRepository.Add(new ToDoItem
+            todoRepository.Add(new MessageItem
             {
-                Title = "Run and Review Tests",
-                Description = "Make sure all the tests run and review what they are doing."
+                Message = "Paxos",
+                Digest = "7e8bf799c2a5b59b8219d64b225424dce22acaa8ee33b90044ebbe8246644eb8"
             });
 
-            return todoRepository.List<ToDoItem>().Count;
+            return todoRepository.List<MessageItem>().Count;
         }
     }
 }

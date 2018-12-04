@@ -1,8 +1,8 @@
-﻿using CleanArchitecture.Core;
-using CleanArchitecture.Core.Interfaces;
+﻿using PaxosExercise.Core;
+using PaxosExercise.Core.Interfaces;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace CleanArchitecture.Web.Pages.ToDoRazorPage
+namespace PaxosExercise.Web.Pages.ToDoRazorPage
 {
     public class PopulateModel : PageModel
     {

@@ -1,15 +1,15 @@
-﻿using CleanArchitecture.Core.Entities;
-using CleanArchitecture.Core.SharedKernel;
+﻿using PaxosExercise.Core.Entities;
+using PaxosExercise.Core.SharedKernel;
 
-namespace CleanArchitecture.Core.Events
+namespace PaxosExercise.Core.Events
 {
-    public class ToDoItemCompletedEvent : BaseDomainEvent
+    public class MessageItemChangedEvent : BaseDomainEvent
     {
-        public ToDoItem CompletedItem { get; set; }
+        public MessageItem ChangedItem { get; set; }
 
-        public ToDoItemCompletedEvent(ToDoItem completedItem)
+        public MessageItemChangedEvent(MessageItem changedItem)
         {
-            CompletedItem = completedItem;
+            ChangedItem = changedItem;
         }
     }
 }

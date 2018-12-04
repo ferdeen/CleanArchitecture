@@ -1,9 +1,9 @@
-﻿using CleanArchitecture.Core;
-using CleanArchitecture.Core.Entities;
-using CleanArchitecture.Core.Interfaces;
+﻿using PaxosExercise.Core;
+using PaxosExercise.Core.Entities;
+using PaxosExercise.Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CleanArchitecture.Web.Controllers
+namespace PaxosExercise.Web.Controllers
 {
     public class ToDoController : Controller
     {
@@ -16,7 +16,7 @@ namespace CleanArchitecture.Web.Controllers
 
         public IActionResult Index()
         {
-            var items = _repository.List<ToDoItem>();
+            var items = _repository.List<MessageItem>();
             return View(items);
         }
 

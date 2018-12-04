@@ -1,11 +1,11 @@
-﻿using CleanArchitecture.Core.Entities;
-using CleanArchitecture.Core.Interfaces;
-using CleanArchitecture.Web.ApiModels;
-using CleanArchitecture.Web.Filters;
+﻿using PaxosExercise.Core.Entities;
+using PaxosExercise.Core.Interfaces;
+using PaxosExercise.Web.ApiModels;
+using PaxosExercise.Web.Filters;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
-namespace CleanArchitecture.Web.Api
+namespace PaxosExercise.Web.Api
 {
     [Route("api/[controller]")]
     [ValidateModel]
@@ -22,8 +22,8 @@ namespace CleanArchitecture.Web.Api
         [HttpGet]
         public IActionResult List()
         {
-            var items = _repository.List<ToDoItem>()
-                            .Select(ToDoItemDTO.FromToDoItem);
+            var items = _repository.List<MessageItem>()
+                            .Select(MessageItemDTO.FromToDoItem);
             return Ok(items);
         }
 
@@ -31,31 +31,29 @@ namespace CleanArchitecture.Web.Api
         [HttpGet("{id:int}")]
         public IActionResult GetById(int id)
         {
-            var item = ToDoItemDTO.FromToDoItem(_repository.GetById<ToDoItem>(id));
+            var item = MessageItemDTO.FromToDoItem(_repository.GetById<MessageItem>(id));
             return Ok(item);
+        }
+
+        // GET: api/ToDoItems
+        [HttpGet("{digest:string")]
+        public IActionResult GetMessageByDigest(string digest)
+        {
+            var item = MessageItemDTO.FromToDoItem(_repository.GetByDigest<MessageItem>(digest));
+            return Ok(item.Message);
         }
 
         // POST: api/ToDoItems
         [HttpPost]
-        public IActionResult Post([FromBody] ToDoItemDTO item)
+        public IActionResult Post([FromBody] MessageItemDTO item)
         {
-            var todoItem = new ToDoItem()
+            var messageItem = new MessageItem()
             {
-                Title = item.Title,
-                Description = item.Description
+                Message = item.Message,
+                Digest = item.Digest
             };
-            _repository.Add(todoItem);
-            return Ok(ToDoItemDTO.FromToDoItem(todoItem));
-        }
-
-        [HttpPatch("{id:int}/complete")]
-        public IActionResult Complete(int id)
-        {
-            var toDoItem = _repository.GetById<ToDoItem>(id);
-            toDoItem.MarkComplete();
-            _repository.Update(toDoItem);
-
-            return Ok(ToDoItemDTO.FromToDoItem(toDoItem));
+            _repository.Add(messageItem);
+            return Ok(MessageItemDTO.FromToDoItem(messageItem));
         }
     }
 }

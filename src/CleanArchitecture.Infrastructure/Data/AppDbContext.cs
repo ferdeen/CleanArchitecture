@@ -1,10 +1,10 @@
-﻿using CleanArchitecture.Core.Interfaces;
+﻿using PaxosExercise.Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using CleanArchitecture.Core.Entities;
-using CleanArchitecture.Core.SharedKernel;
+using PaxosExercise.Core.Entities;
+using PaxosExercise.Core.SharedKernel;
 
-namespace CleanArchitecture.Infrastructure.Data
+namespace PaxosExercise.Infrastructure.Data
 {
     public class AppDbContext : DbContext
     {
@@ -16,7 +16,7 @@ namespace CleanArchitecture.Infrastructure.Data
             _dispatcher = dispatcher;
         }
 
-        public DbSet<ToDoItem> ToDoItems { get; set; }
+        public DbSet<MessageItem> MessageItems { get; set; }
 
         public override int SaveChanges()
         {

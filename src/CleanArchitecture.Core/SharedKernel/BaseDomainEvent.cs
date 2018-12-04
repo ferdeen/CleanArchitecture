@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CleanArchitecture.Core.SharedKernel
+namespace PaxosExercise.Core.SharedKernel
 {
     public abstract class BaseDomainEvent
     {

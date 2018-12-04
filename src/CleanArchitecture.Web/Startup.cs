@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using CleanArchitecture.Core.SharedKernel;
-using CleanArchitecture.Infrastructure.Data;
+using PaxosExercise.Core.SharedKernel;
+using PaxosExercise.Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -14,7 +14,7 @@ using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.Reflection;
 
-namespace CleanArchitecture.Web
+namespace PaxosExercise.Web
 {
     public class Startup
     {

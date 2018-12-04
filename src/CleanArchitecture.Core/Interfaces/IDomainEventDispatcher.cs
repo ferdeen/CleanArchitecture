@@ -1,6 +1,6 @@
-﻿using CleanArchitecture.Core.SharedKernel;
+﻿using PaxosExercise.Core.SharedKernel;
 
-namespace CleanArchitecture.Core.Interfaces
+namespace PaxosExercise.Core.Interfaces
 {
     public interface IDomainEventDispatcher
     {

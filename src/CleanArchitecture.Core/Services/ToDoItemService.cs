@@ -1,12 +1,12 @@
 ﻿using Ardalis.GuardClauses;
-using CleanArchitecture.Core.Events;
-using CleanArchitecture.Core.Interfaces;
+using PaxosExercise.Core.Events;
+using PaxosExercise.Core.Interfaces;
 
-namespace CleanArchitecture.Core.Services
+namespace PaxosExercise.Core.Services
 {
-    public class ToDoItemService : IHandle<ToDoItemCompletedEvent>
+    public class MessageItemService : IHandle<MessageItemChangedEvent>
     {
-        public void Handle(ToDoItemCompletedEvent domainEvent)
+        public void Handle(MessageItemChangedEvent domainEvent)
         {
             Guard.Against.Null(domainEvent, nameof(domainEvent));
 

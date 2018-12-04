@@ -1,7 +1,7 @@
-﻿using CleanArchitecture.Core.Interfaces;
-using CleanArchitecture.Core.SharedKernel;
+﻿using PaxosExercise.Core.Interfaces;
+using PaxosExercise.Core.SharedKernel;
 
-namespace CleanArchitecture.Tests
+namespace PaxosExercise.Tests
 {
     public class NoOpDomainEventDispatcher : IDomainEventDispatcher
     {

@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <PreserveCompilationContext>true</PreserveCompilationContext>
-    <AssemblyName>CleanArchitecture.Web</AssemblyName>
+    <AssemblyName>PaxosExercise.Web</AssemblyName>
     <OutputType>Exe</OutputType>
     <PackageId>CleanArchitecture.Web</PackageId>
   </PropertyGroup>
@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CleanArchitecture.Core\CleanArchitecture.Core.csproj" />
-    <ProjectReference Include="..\CleanArchitecture.Infrastructure\CleanArchitecture.Infrastructure.csproj" />
+    <ProjectReference Include="..\CleanArchitecture.Core\PaxosExercise.Core.csproj" />
+    <ProjectReference Include="..\CleanArchitecture.Infrastructure\PaxosExercise.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>

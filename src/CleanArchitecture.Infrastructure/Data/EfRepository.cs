@@ -1,10 +1,10 @@
-﻿using CleanArchitecture.Core.Interfaces;
-using CleanArchitecture.Core.SharedKernel;
+﻿using PaxosExercise.Core.Interfaces;
+using PaxosExercise.Core.SharedKernel;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CleanArchitecture.Infrastructure.Data
+namespace PaxosExercise.Infrastructure.Data
 {
     public class EfRepository : IRepository
     {
@@ -18,6 +18,11 @@ namespace CleanArchitecture.Infrastructure.Data
         public T GetById<T>(int id) where T : BaseEntity
         {
             return _dbContext.Set<T>().SingleOrDefault(e => e.Id == id);
+        }
+
+        public T GetByDigest<T>(string digest) where T : BaseEntity
+        {
+            return _dbContext.Set<T>().SingleOrDefault(e => e.Digest == digest);
         }
 
         public List<T> List<T>() where T : BaseEntity

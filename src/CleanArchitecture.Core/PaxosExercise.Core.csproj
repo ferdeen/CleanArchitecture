@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>CleanArchitecture.Core</AssemblyName>
+    <AssemblyName>PaxosExercise.Core</AssemblyName>
     <PackageId>CleanArchitecture.Core</PackageId>
   </PropertyGroup>
 

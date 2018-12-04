@@ -1,17 +1,17 @@
-﻿using CleanArchitecture.Core.Events;
+﻿using PaxosExercise.Core.Events;
 using System.Linq;
 using Xunit;
 
-namespace CleanArchitecture.Tests.Core.Entities
+namespace PaxosExercise.Tests.Core.Entities
 {
     public class ToDoItemMarkCompleteShould
     {
         [Fact]
         public void SetIsDoneToTrue()
         {
-            var item = new ToDoItemBuilder().Build();
+            var item = new MessageItemBuilder().Build();
 
-            item.MarkComplete();
+            item.MarkChanged();
 
             Assert.True(item.IsDone);
         }
@@ -19,12 +19,12 @@ namespace CleanArchitecture.Tests.Core.Entities
         [Fact]
         public void RaiseToDoItemCompletedEvent()
         {
-            var item = new ToDoItemBuilder().Build();
+            var item = new MessageItemBuilder().Build();
 
-            item.MarkComplete();
+            item.MarkChanged();
 
             Assert.Single(item.Events);
-            Assert.IsType<ToDoItemCompletedEvent>(item.Events.First());
+            Assert.IsType<MessageItemChangedEvent>(item.Events.First());
         }
     }
 }

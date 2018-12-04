@@ -21,9 +21,9 @@
   </Target>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\CleanArchitecture.Core\CleanArchitecture.Core.csproj" />
-    <ProjectReference Include="..\..\src\CleanArchitecture.Infrastructure\CleanArchitecture.Infrastructure.csproj" />
-    <ProjectReference Include="..\..\src\CleanArchitecture.Web\CleanArchitecture.Web.csproj" />
+    <ProjectReference Include="..\..\src\CleanArchitecture.Core\PaxosExercise.Core.csproj" />
+    <ProjectReference Include="..\..\src\CleanArchitecture.Infrastructure\PaxosExercise.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\CleanArchitecture.Web\PaxosExercise.Web.csproj" />
   </ItemGroup>
 
   <ItemGroup>

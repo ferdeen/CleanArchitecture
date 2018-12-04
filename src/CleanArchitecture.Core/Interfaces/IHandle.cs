@@ -1,6 +1,6 @@
-﻿using CleanArchitecture.Core.SharedKernel;
+﻿using PaxosExercise.Core.SharedKernel;
 
-namespace CleanArchitecture.Core.Interfaces
+namespace PaxosExercise.Core.Interfaces
 {
     public interface IHandle<T> where T : BaseDomainEvent
     {
