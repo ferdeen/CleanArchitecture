@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaxosExercise.Infrastructur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaxosExercise.Web", "src\CleanArchitecture.Web\PaxosExercise.Web.csproj", "{C9751CB7-4CD6-4633-A99A-4F6ADD525437}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Tests", "tests\CleanArchitecture.Tests\CleanArchitecture.Tests.csproj", "{AEE17BAB-D187-4BC5-B640-40CC0749566C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaxosSolution.Tests", "tests\CleanArchitecture.Tests\PaxosSolution.Tests.csproj", "{AEE17BAB-D187-4BC5-B640-40CC0749566C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
