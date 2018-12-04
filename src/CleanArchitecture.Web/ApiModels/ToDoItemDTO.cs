@@ -9,7 +9,7 @@ namespace PaxosExercise.Web.ApiModels
         public int Id { get; set; }
         [Required]
         public string Message { get; set; }
-        public string Digest { get; set; }
+        public string Digest { get; private set; }
 
         public static MessageItemDTO FromToDoItem(MessageItem item)
         {

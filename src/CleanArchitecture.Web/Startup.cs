@@ -45,7 +45,7 @@ namespace PaxosExercise.Web
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+                c.SwaggerDoc("v1", new Info { Title = "Paxos Solution API", Version = "v1" });
             });
 
             return BuildDependencyInjectionProvider(services);
@@ -98,9 +98,13 @@ namespace PaxosExercise.Web
 
             app.UseMvc(routes =>
             {
+                //routes.MapRoute(
+                //    name: "default",
+                //    template: "{controller=Home}/{action=Index}/{id?}");
+
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{digest?}");
             });
         }
     }

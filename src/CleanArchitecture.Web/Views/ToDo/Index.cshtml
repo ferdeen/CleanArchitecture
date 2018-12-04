@@ -1,11 +1,11 @@
 ﻿@{
-    ViewData["Title"] = "ToDo List";
+    ViewData["Title"] = "Message List";
 }
-@model IEnumerable<PaxosExercise.Core.Entities.ToDoItem>
-<h2>To Do Items (MVC View)</h2>
+@model IEnumerable<PaxosExercise.Core.Entities.MessageItem>
+<h2>Message Items (MVC View)</h2>
 <ul>
 @foreach (var item in Model)
 {
-    <li>@item.Title<br/>@item.Description</li>
+    <li>@item.Message<br/>@item.Digest</li>
 }
 </ul>

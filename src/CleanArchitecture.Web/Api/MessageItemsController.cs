@@ -9,11 +9,11 @@ namespace PaxosExercise.Web.Api
 {
     [Route("api/[controller]")]
     [ValidateModel]
-    public class ToDoItemsController : Controller
+    public class MessageItemsController : Controller
     {
         private readonly IRepository _repository;
 
-        public ToDoItemsController(IRepository repository)
+        public MessageItemsController(IRepository repository)
         {
             _repository = repository;
         }
@@ -50,7 +50,7 @@ namespace PaxosExercise.Web.Api
             var messageItem = new MessageItem()
             {
                 Message = item.Message,
-                Digest = item.Digest
+                Digest = item.Digest  // generate digest
             };
             _repository.Add(messageItem);
             return Ok(MessageItemDTO.FromToDoItem(messageItem));

@@ -5,11 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace PaxosExercise.Web.Controllers
 {
-    public class ToDoController : Controller
+    public class MessageController : Controller
     {
         private readonly IRepository _repository;
 
-        public ToDoController(IRepository repository)
+        public MessageController(IRepository repository)
         {
             _repository = repository;
         }
