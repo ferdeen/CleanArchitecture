@@ -11,5 +11,6 @@ namespace PaxosExercise.Core.Interfaces
         T Add<T>(T entity) where T : BaseEntity;
         void Update<T>(T entity) where T : BaseEntity;
         void Delete<T>(T entity) where T : BaseEntity;
+        void DeleteAll<T>() where T : BaseEntity;
     }
 }

@@ -19,6 +19,7 @@ namespace PaxosExercise.Tests.Integration.Web
         private readonly HttpClient _client;
         private const string MessageRouteApi = "/api/messages/";
         private const string GetMessagesAction = "getmessages";
+        private const string FlushMessagesAction = "flushmessages";
 
         public ApiMessageItemsControllerList(CustomWebApplicationFactory<Startup> factory)
         {
@@ -43,6 +44,21 @@ namespace PaxosExercise.Tests.Integration.Web
         {
             var result = await PostNewMessageAsync(SeedData.Messages.First());
             result.Digest.Contains(SeedData.Messages.First().Digest);
+        }
+
+        [Fact]
+        public async Task FlushMessages()
+        {
+            // At setup there are two messages in the repository.  Remove both.
+            var response = await _client.GetAsync($"{MessageRouteApi}{FlushMessagesAction}");
+            response.EnsureSuccessStatusCode();
+
+            response = await _client.GetAsync($"{MessageRouteApi}{GetMessagesAction}");
+            response.EnsureSuccessStatusCode();
+            var stringResponse = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<IEnumerable<MessageItem>>(stringResponse).ToList();
+
+            result.Count.Should().Be(0);
         }
 
         [Fact]

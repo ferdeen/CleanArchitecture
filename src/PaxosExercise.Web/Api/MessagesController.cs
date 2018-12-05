@@ -45,7 +45,14 @@ namespace PaxosExercise.Web.Api
             var items = this.repository.List<MessageItem>()
                             .Select(MessageItemDTO.FromMessageItem);
             return Ok(items);
-        }        
+        }
+
+        [HttpGet("FlushMessages")]
+        public IActionResult Flush()
+        {
+            this.repository.DeleteAll<MessageItem>();
+            return Ok();
+        }
 
         [HttpGet("{id:int}")]
         public IActionResult GetById(int id)

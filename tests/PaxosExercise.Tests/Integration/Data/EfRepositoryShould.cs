@@ -1,12 +1,13 @@
 ﻿using PaxosExercise.Core.Entities;
 using PaxosExercise.Core.Interfaces;
-using PaxosExercise.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using System;
 using System.Linq;
 using Xunit;
+using PaxosExercise.Infrastructure.Data;
+using FluentAssertions;
 
 namespace PaxosExercise.Tests.Integration.Data
 {
@@ -91,6 +92,26 @@ namespace PaxosExercise.Tests.Integration.Data
             // verify it's no longer there
             Assert.DoesNotContain(repository.List<MessageItem>(),
                 i => i.Message == initialMessage);
+        }
+
+        [Fact]
+        public void DeleteAllAfterAdding()
+        {
+            // add an item
+            var repository = GetRepository();
+            var initialMessage = Guid.NewGuid().ToString();
+
+            var item = new MessageItemBuilder().Message(initialMessage).Build();
+            repository.Add(item);
+
+            item = new MessageItemBuilder().Message(initialMessage).Build();
+            repository.Add(item);
+
+            repository.List<MessageItem>().Should().HaveCount(2);
+
+            repository.DeleteAll<MessageItem>();
+
+            repository.List<MessageItem>().Should().BeEmpty();
         }
 
         private EfRepository GetRepository()

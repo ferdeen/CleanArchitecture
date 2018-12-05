@@ -44,6 +44,12 @@ namespace PaxosExercise.Infrastructure.Data
             _dbContext.SaveChanges();
         }
 
+        public void DeleteAll<T>() where T : BaseEntity
+        {
+            _dbContext.Set<T>().Clear();
+            _dbContext.SaveChanges();
+        }
+
         public void Update<T>(T entity) where T : BaseEntity
         {
             _dbContext.Entry(entity).State = EntityState.Modified;
