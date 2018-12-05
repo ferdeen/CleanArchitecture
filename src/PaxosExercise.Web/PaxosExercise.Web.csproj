@@ -5,6 +5,7 @@
     <AssemblyName>PaxosExercise.Web</AssemblyName>
     <OutputType>Exe</OutputType>
     <PackageId>PaxosExercise.Web</PackageId>
+    <UserSecretsId>2bda9903-51c4-4152-9423-b72ad745dbc7</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,11 +26,6 @@
     <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="1.0.163" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="3.0.0" />
   </ItemGroup>
-
-  <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
-    <Exec Command="bower install" />
-    <Exec Command="dotnet bundle" />
-  </Target>
 
   <ItemGroup>
     <DotNetCliToolReference Include="BundlerMinifier.Core" Version="2.8.391" />
