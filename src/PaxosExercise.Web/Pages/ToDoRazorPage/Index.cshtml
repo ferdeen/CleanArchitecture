@@ -1,0 +1,10 @@
+﻿@page
+@model PaxosExercise.Web.Pages.ToDoRazorPage.IndexModel
+
+<h2>Message Items (Razor Page)</h2>
+<ul>
+    @foreach (var item in Model.MessageItems)
+    {
+        <li>@item.Message<br />@item.Digest</li>
+    }
+</ul>
