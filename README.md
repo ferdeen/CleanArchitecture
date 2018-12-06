@@ -4,7 +4,7 @@ Open the following link :-
 
 - [PaxFerdeenExcercise.Web](http://paxsossolution-dev-as.azurewebsites.net/)
 
-To confirm I've answered the first question select the _API Documentation (Swagger)_ link [(or select it here)](http://paxsossolution-dev-as.azurewebsites.net/swagger/index.html).
+Select the _API Documentation (Swagger)_ link [(or select it here)](http://paxsossolution-dev-as.azurewebsites.net/swagger/index.html).
 
 This will allow you test the WebAPI endpoints using Swagger.
 
