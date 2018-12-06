@@ -45,13 +45,20 @@ curl -X POST "http://paxsossolution-dev-as.azurewebsites.net/api/Messages" -H "a
 #### Swagger
 Click the "GET /api/Messages panel", click the "Try it out" button.  Copy and paste the generated hash from above into the text "Digest" text box.  Then click "Execute".  
 
-The response will say "Ferdeen"
+The response will be :-
+
+```
+"Ferdeen"
+```
 
 #### Curl
 
 ```
 curl -X GET "http://paxsossolution-dev-as.azurewebsites.net/api/Messages?digest=94614313b6ab9fc78ff632295ebeb5a4ab993316f6ba0392ceb7811fc4da4435" -H "accept: application/json"
 ```
+
+
+
 ### Extras
 
 I've created extra WebAPI endpoints to populate and get message from the store. Also to flush out the messages from the store.
