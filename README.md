@@ -1,6 +1,64 @@
-## Steps
+# Instructions
 
-- [DotNetRocks Podcast Discussion with Steve "ardalis" Smith](https://player.fm/series/net-rocks/clean-architecture-with-steve-smith)
-- [Fritz and Friends Streaming Discussion with Steve "ardalis" Smith](https://www.youtube.com/watch?v=k8cZUW4MS3I)
+Open the following link :-
 
-The goal of this repository is to provide a basic solution structure that can be used to build Domain-Driven Design (DDD)-based or simply well-factored, SOLID applications using .NET Core. Learn more about these topics here:
+- [PaxFerdeenExcercise.Web](http://paxsossolution-dev-as.azurewebsites.net/)
+
+To confirm I've answered the first question select the [API Documentation (Swagger) link](http://paxsossolution-dev-as.azurewebsites.net/swagger/index.html).
+
+This will allow you test the WebAPI endpoints using Swagger.
+
+The endpoints of interest are :-
+
+* POST /api/Messages
+* GET /api/Messages
+
+### POST /api/Messages
+
+#### Swagger
+Click the "POST /api/Messages panel", click the "Try it out" button.  Type a message, in the text box. For example :-
+
+```
+{
+  "message": "Ferdeen"
+}
+
+```
+Then click the "Execute" button.  The response will be :-
+
+```
+{
+  "id": 1,
+  "message": "Ferdeen",
+  "digest": "94614313b6ab9fc78ff632295ebeb5a4ab993316f6ba0392ceb7811fc4da4435"
+}
+```
+
+#### Curl
+
+```
+curl -X POST "http://paxsossolution-dev-as.azurewebsites.net/api/Messages" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -d "{ \"message\": \"Ferdeen\"}"
+```
+
+### GET /api/Messages
+
+#### Swagger
+Click the "GET /api/Messages panel", click the "Try it out" button.  Copy and paste the generated hash from above into the text "Digest" text box.  Then click "Execute".  
+
+The response will say "Ferdeen"
+
+#### Curl
+
+```
+curl -X GET "http://paxsossolution-dev-as.azurewebsites.net/api/Messages?digest=94614313b6ab9fc78ff632295ebeb5a4ab993316f6ba0392ceb7811fc4da4435" -H "accept: application/json"
+```
+### Extras
+
+I've created extra WebAPI endpoints to populate and get message from the store. Also to flush out the messages from the store.
+
+* GET /api/Messages/Populate
+* GET /api/Messages/GetMessages
+* GET /api/Messages/FlushMessages
+* GET /api/Messages/{id}
+
+Finally these endpoints are also available on the [PaxFerdeenExcercise.Web](http://paxsossolution-dev-as.azurewebsites.net/) via _Message Items (MVC)_ and _Message Items (Razor Pages)_.
