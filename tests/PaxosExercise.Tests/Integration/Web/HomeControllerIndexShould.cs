@@ -21,7 +21,7 @@ namespace PaxosExercise.Tests.Integration.Web
             response.EnsureSuccessStatusCode();
             string stringResponse = await response.Content.ReadAsStringAsync();
 
-            Assert.Contains("PaxosExercise.Web", stringResponse);
+            Assert.Contains("PaxFerdeenExercise.Web", stringResponse);
         }
     }
 }

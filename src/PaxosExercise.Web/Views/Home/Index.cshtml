@@ -1,25 +1,32 @@
 ﻿@{
-    ViewData["Title"] = "Paxos Excercise - Ferdeen Mughal";
+    ViewData["Title"] = "Pax Excercise - Ferdeen Mughal";
 }
 
 <div class="row">
     <div class="col-md-6">
-        <h3>Message Items (Swagger - WebAPI)</h3>
-        <ul>
-            <li>Allows you to convert and persist a message into a SHA256 hash.</li>
-            <li><a href="/swagger">API Documentation (Swagger)</a></li>
-        </ul>
-        <h3>Message Items (MVC)</h3>
-        <ul>
-            <li>Will allow you do to the same as above, but also populate more items, and query by Id.</li>
-            <li><a asp-area="" asp-controller="Message" asp-action="Populate">Load Sample Message Items</a> (API call returning just a number)</li>
-            <li><a asp-area="" asp-controller="Message" asp-action="Index">List Message Items</a></li>
-        </ul>
-        <h3>Message Items (Razor Pages)</h3>
-        <ul>
-            <li>Message Items (Razor Pages) - The same as above.</li>
-            <li><a asp-page="/ToDoRazorPage/Populate">Load Sample Message Items</a></li>
-            <li><a asp-page="/ToDoRazorPage/Index">List Message Items</a></li>
-        </ul>
+        <br /><br /><br />
+        <div>
+            <h4>Message Items (Swagger - WebAPI)</h4>
+            <ul>
+                <li>Allows you to convert and persist a message into a SHA256 hash.</li>
+                <li><a href="/swagger">API Documentation (Swagger)</a></li>
+            </ul>
+
+        </div>
+        <br />
+        <div style="color:grey;">
+            <h4>Message Items (MVC)</h4>
+            <ul>
+                <li>Will allow you do to the same as above, but also populate more items, and query by Id.</li>
+                <li><a asp-area="" asp-controller="Message" asp-action="Populate">Load Sample Message Items</a> (API call returning just a number)</li>
+                <li><a asp-area="" asp-controller="Message" asp-action="Index">List Message Items</a></li>
+            </ul>
+            <h4>Message Items (Razor Pages)</h4>
+            <ul>
+                <li>Message Items (Razor Pages) - The same as above.</li>
+                <li><a asp-page="/ToDoRazorPage/Populate">Load Sample Message Items</a></li>
+                <li><a asp-page="/ToDoRazorPage/Index">List Message Items</a></li>
+            </ul>
+        </div>
     </div>
 </div>

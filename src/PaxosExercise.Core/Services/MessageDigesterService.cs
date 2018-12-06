@@ -8,8 +8,12 @@ using System.Threading.Tasks;
 
 namespace PaxosExercise.Core.Services
 {
+    /// <summary>
+    /// Component that takes a message and converts it into a SHA256 hash digest.
+    /// </summary>
     public class MessageDigesterService : IMessageDigester
     {
+        /// <inheritdoc />
         public Task<string> ComputeMessageDigestAsync(string message, CancellationToken cancellationToken = default(CancellationToken))
         {
             return Task.Run<string>(() =>
